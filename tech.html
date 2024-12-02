@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <style>
+         
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #34495e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #f1f1f1;
+            overflow: hidden;
+            border-bottom: 1px solid #ddd;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            float: left;
+        }
+
+        nav li a {
+            display: block;
+            color: #333;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        nav li a:hover {
+            background-color: #ddd;
+        }
+
+        main {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        select, input, button {
+            padding: 12px;
+            margin: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .tech-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tech-card {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            max-width: 300px;
+            background-color: white;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .tech-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .tech-card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .search-bar button {
+            background-color: navy;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+    <title>Tech Marketplace</title>
+</head>
+<body>
+    <header>
+        <h1>Electronics</h1>
+    </header>
+    
+
+    
+    <div class="search-bar">
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Search for tech...">
+        <button onclick="searchNow()">Search Now</button>
+    </div>
+    
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main class="tech">
+        <h2>Explore the Latest Tech</h2>
+        <div class="tech-list">
+            <div class="tech-card">
+                <img src="20220324_103646-1-1.webp" alt="Laptop">
+                <p>High-Performance Laptop - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="e08af54e-3a0b-4647-843e-baae49713f4a.webp" alt="Smartphone">
+                <p>Latest Smartphone - $800</p>
+
+            </div>
+
+            <div class="tech-card">
+                <img src="lap1.webp" alt="Laptop">
+                <p>High-Performance Laptop - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="lap5.webp" alt="Laptop">
+                <p>High-Performance iphone - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="lap2.webp" alt="Laptop">
+                <p>High-Performance iphone - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="lap3.webp" alt="Laptop">
+                <p>High-Performance iphone - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="lap4.webp" alt="Laptop">
+                <p>High-Performance ipad - $900</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop1.webp" alt="Laptop">
+                <p>High-Performance PC - $1,500</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop2.webp" alt="Laptop">
+                <p>High-Performance PC - $1,800</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop3.webp" alt="Laptop">
+                <p>High-Performance PC - $2,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop4.webp" alt="Laptop">
+                <p>Full Gaming Setup - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="ko5.webp" alt="Laptop">
+                <p>High-Performance Monitor- $759</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop6.webp" alt="Laptop">
+                <p>Samsung Monitor- $800</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop7.webp" alt="Laptop">
+                <p>LG Ultravide Monitor - $900</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop8.webp" alt="Laptop">
+                <p>X-Box Series X - $600</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop9.webp" alt="Laptop">
+                <p>X-Box series S $462</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop10.webp" alt="Laptop">
+                <p>Asus Rog - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop11.webp" alt="Laptop">
+                <p>Nintendo Switch- $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop12.webp" alt="Laptop">
+                <p>Nintendo Switch - $1,200</p>
+            </div>
+            <div class="tech-card">
+                <img src="kop13.webp" alt="Laptop">
+                <p>Nintendo Switch- $1,200</p>
+            </div>
+        </div>
+        
+        
+       
+    </main>
+   
+    <script>
+        function searchNow() {
+           
+            alert('Search button clicked!');
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Details - MyOnlineStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        header, footer {
+            background-color: #34495e;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s;
+            font-size: 16px;
+        }
+
+        header nav a:hover {
+            background-color: #5a6268;
+            transform: scale(1.05);
+        }
+
+        .product-details {
+            margin-top: 30px;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .product-description {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .add-to-cart-btn {
+            margin-top: 20px;
+            background-color: #483bbd;
+            border-color: #483bbd;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #27ae60;
+            border-color: #1e8449;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1200px) {
+            header .logo {
+                font-size: 22px;
+            }
+
+            .product-description {
+                font-size: 1.1rem;
+            }
+
+            .product-price {
+                font-size: 1.3rem;
+            }
+
+            .add-to-cart-btn {
+                font-size: 14px;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header .logo {
+                font-size: 20px;
+            }
+
+            header nav {
+                display: block;
+                margin-top: 10px;
+            }
+
+            header nav a {
+                display: block;
+                margin: 10px 0;
+                font-size: 14px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .product-details {
+                margin-top: 15px;
+            }
+
+            .product-description {
+                font-size: 1rem;
+            }
+
+            .product-price {
+                font-size: 1.2rem;
+            }
+
+            .add-to-cart-btn {
+                font-size: 14px;
+                padding: 12px 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-description {
+                font-size: 0.9rem;
+            }
+
+            .product-price {
+                font-size: 1.1rem;
+            }
+
+            .add-to-cart-btn {
+                font-size: 12px;
+                padding: 10px 20px;
+            }
+
+            footer a {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">Products</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="cart.html">Cart</a>
+        <a href="product.html">Products</a>
+    </nav>
+</header>
+
+<main class="container product-details">
+    <div class="row" id="product-list">
+       
+    </div>
+</main>
+
+<footer>
+    <div>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </div>
+    <div>&copy; 2024 ShopyVibe. All rights reserved.</div>
+</footer>
+
+<script>
+    const products = [
+        {
+            name: 'Hoodie',
+            price: 19.99,
+            image: 'clothing6.webp',
+            description: 'Perfect Fit: Available in a range of sizes, from XS to XXL.',
+            specifications: 'Material: Cotton, Washable: Yes'
+        },
+        {
+            name: 'Shelf',
+            price: 55.99,
+            image: 'idk.png',
+            description: 'Designed to blend seamlessly with any decor.',
+            specifications: 'High-quality engineered wood with a smooth laminate finish'
+        }
+    ];
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const productList = document.getElementById('product-list');
+
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.className = 'col-md-6 mb-4';
+
+            productCard.innerHTML = `
+                <div class="card">
+                    <img src="${product.image}" class="card-img-top product-image" alt="${product.name}">
+                    <div class="card-body">
+                        <h5 class="card-title">${product.name}</h5>
+                        <p class="card-text">${product.description}</p>
+                        <p><strong>Specifications:</strong> ${product.specifications}</p>
+                        <p class="product-price">$${product.price.toFixed(2)}</p>
+                        <button class="btn btn-primary add-to-cart-btn" onclick="addToCart('${product.name}')">Add to Cart</button>
+                    </div>
+                </div>
+            `;
+
+            productList.appendChild(productCard);
+        });
+    });
+
+    function addToCart(productName) {
+        const product = products.find(p => p.name === productName);
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItemIndex = cart.findIndex(item => item.name === product.name);
+
+        if (existingItemIndex > -1) {
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            cart.push({ name: product.name, price: product.price, image: product.image, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${product.name} has been added to your cart.`);
+    }
+</script>
+
+</body>
+</html>

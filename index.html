@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Store</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       
+    body, h1, h2, h3, p {
+        margin: 0;
+        padding: 0;
+    }
+    .logo-img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    header {
+        background-color: #34495e;
+        color: #fff;
+        padding: 20px 0;
+    }
+
+    header .logo {
+        font-size: 26px;
+        font-weight: bold;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    header nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+    }
+
+    header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 8px 12px;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+    header nav ul li a:hover, header nav ul li a:focus {
+        background-color: #2c3e50;
+        border-radius: 4px;
+    }
+
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .search-bar input[type="text"] {
+        width: 50%;
+        padding: 12px;
+        border-radius: 50px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .search-bar input[type="text"]:focus {
+        outline: none;
+        border-color: #34495e;
+    }
+
+    .search-bar button {
+        background-color: #34495e;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 1rem;
+        margin-left: 10px;
+        transition: all 0.3s ease, transform 0.3s ease;
+    }
+
+    .search-bar button:hover {
+        background-color: #2c3e50;
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero {
+        background: url('store.jpg') no-repeat center center;
+        background-size: cover;
+        height: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero h1 {
+        font-size: 3rem;
+        font-weight: bold;
+    }
+
+    .filter-section {
+        margin: 20px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        flex-wrap: wrap;
+        text-align: center; 
+    }
+
+    .filter-section select {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        margin: 0 10px; 
+    }
+
+    .filter-section button {
+        background-color: #34495e;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease, transform 0.3s ease;
+        margin: 0 10px; 
+    }
+
+    .filter-section button:hover {
+        background-color: #2c3e50;
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        justify-content: center;
+        margin: 20px auto;
+    }
+
+    .product-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .product-card:hover {
+        transform: scale(1.05);
+    }
+
+    .product-img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .product-name {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    .product-price {
+        font-size: 1.2rem;
+        color: #000; 
+        margin-top: 8px;
+    }
+
+    .product-card button {
+        background-color: #34495e;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: all 0.3s ease, transform 0.3s ease;
+    }
+
+    .product-card button:hover {
+        background-color: #2c3e50;
+        transform: translateY(-5px) scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+        background-color: #34495e;
+        color: #fff;
+        padding: 30px 0;
+        text-align: center;
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+        text-decoration: underline;
+        color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+        header nav ul {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .search-bar input[type="text"] {
+            width: 70%;
+        }
+
+        .filter-section {
+            flex-direction: column;
+            align-items: center;
+            text-align: center; 
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .product-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .search-bar input[type="text"] {
+            width: 100%;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <img src="logo.jpg" alt="Logo" class="logo-img">
+            <div class="logo ms-2">ShopyVibe</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button>Search</button>
+    </div>
+</header>
+
+
+<section class="hero">
+    <h1>Welcome to the Best Online Store!</h1>
+</section>
+
+<section class="filter-section container">
+    <select onchange="if(this.value) { window.open(this.value, '_blank'); }">
+        <option value="">All Categories</option>
+        <option value="tech.html">Electronics</option>
+        <option value="shopping.html">Clothing</option>
+    </select>
+    
+
+    
+    <select>
+        <option value="low-to-high">Price: Low to High</option>
+        <option value="high-to-low">Price: High to Low</option>
+    </select>
+
+    <button>Filter</button>
+   
+
+</section>
+
+<section class="product-grid container">
+    <div class="product-card">
+        <img src="clothing6.webp" alt="Hoodie" class="product-img">
+        <div class="product-name">Hoodie</div>
+        <div class="product-price">$19.99</div>
+        <button onclick="addToCart('Hoodie', 19.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="clothing2.webp" alt="Wall Clock" class="product-img">
+        <div class="product-name">Wall Clock</div>
+        <div class="product-price">$29.99</div>
+        <button onclick="addToCart('Wall Clock', 29.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="clothing4.jpg" alt="Product 3" class="product-img">
+        <div class="product-name">Shelf</div>
+        <div class="product-price">$55.99</div>
+        <button onclick="addToCart('Shelf', 55.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+        <img src="clothing5.webp" alt="Product 4" class="product-img">
+        <div class="product-name">Wall Decoration</div>
+        <div class="product-price">$49.99</div>
+        <button onclick="addToCart('Wall Decoration', 49.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="store1.avif" alt="Product 4" class="product-img">
+        <div class="product-name">Bracelet</div>
+        <div class="product-price">$16.99</div>
+        <button onclick="addToCart('Bracelet', 16.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="store2.jpg" alt="Product 4" class="product-img">
+        <div class="product-name">Grater</div>
+        <div class="product-price">$18.99</div>
+        <button onclick="addToCart('Grater', 18.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="store3.jpg" alt="Product 4" class="product-img">
+        <div class="product-name">Measure</div>
+        <div class="product-price">$22.99</div>
+        <button onclick="addToCart('Measure', 22.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="store5.avif" alt="Product 4" class="product-img">
+        <div class="product-name">Trainer breathing</div>
+        <div class="product-price">$15.99</div>
+        <button onclick="addToCart('Trainer breathing', 15.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="store6.avif" alt="Product 4" class="product-img">
+        <div class="product-name"> Handheald Massage</div>
+        <div class="product-price">$35.99</div>
+        <button onclick="addToCart('Handheald Massage', 35.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="store7.avif" alt="Product 4" class="product-img">
+        <div class="product-name">Socks</div>
+        <div class="product-price">$7.99</div>
+        <button onclick="addToCart('Socks', 7.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="kop1.webp" alt="Product 4" class="product-img">
+        <div class="product-name">Gaming Pc</div>
+        <div class="product-price">$559</div>
+        <button onclick="addToCart('Gaming Pc', 559.99, 'product1.jpg')">Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="kop2.webp" alt="Product 4" class="product-img">
+        <div class="product-name">Gaming Pc</div>
+        <div class="product-price">$1200</div>
+        <button onclick="addToCart('Gaming Pc', 1200, 'product1.jpg')">Add to Cart</button>
+    </div>
+</section>
+
+<footer>
+    <div>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    </div>
+    <div>&copy; 2024 ShopyVibe. All rights reserved.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+    function addToCart(name, price, image) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existingItemIndex = cart.findIndex(item => item.name === name);
+
+        if (existingItemIndex > -1) {
+            cart[existingItemIndex].quantity += 1;
+        } else {
+            cart.push({ name, price, image, quantity: 1 });
+        }
+
+        localStorage.setItem('cart', JSON.stringify(cart));
+        alert(`${name} has been added to your cart.`);
+    }
+</script>
+
+
+</body>
+</html>

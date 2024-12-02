@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #34495e;
+            overflow: hidden;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            display: block;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #3d566e;
+        }
+
+        .search-bar {
+            background-color: #2c3e50;
+            padding: 10px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+            width: 70%;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 5px 5px 0;
+            outline: none;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .shopping {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .shopping h2 {
+            color: #2c3e50;
+        }
+
+        .shopping-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .shopping-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: #fff;
+            transition: box-shadow 0.3s;
+        }
+
+        .shopping-card:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .shopping-card img {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .shopping-card p {
+            margin: 15px 0;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+    <title>Clothing</title>
+</head>
+<body>
+    <header>
+        <h1>Clothing</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <form action="#" method="get">
+            <input type="text" placeholder="Search for items...">
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <main class="shopping">
+        <h2>Shop for Various Items</h2>
+        <div class="shopping-list">
+            <div class="shopping-card">
+                <img src="clothing1.avif" alt="Item 1">
+                <p>Stylish Clothing - $50</p>
+            </div>
+            <div class="shopping-card">
+                <img src="clothing2.webp" alt="Item 2">
+                <p>Home Decor - $30</p>
+            </div>
+
+            <div class="shopping-card">
+                <img src="clothing4.jpg" alt="Item 2">
+                <p>Home Decor - $30</p>
+            </div>
+            <div class="shopping-card">
+                <img src="clothing5.webp" alt="Item 2">
+                <p>Home Decor - $30</p>
+            </div>
+            <div class="shopping-card">
+                <img src="img-hero-1.png" alt="Item 2">
+                <p>Stylish Clothing $29</p>
+            </div>
+
+            <div class="shopping-card">
+                <img src="clothing6.webp" alt="Item 2">
+                <p>Clothing - $20</p>
+            </div>
+           
+        
+    
+        </div>
+    </main>
+</body>
+</html>
+
+
